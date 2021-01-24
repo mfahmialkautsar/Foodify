@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchView" customModule="Foodify" customModuleProvider="target">
+            <connections>
+                <outlet property="errorLabel" destination="7uT-bx-JFl" id="DRd-3X-LXe"/>
+                <outlet property="loadIndicator" destination="2Px-q9-qlr" id="7f1-Dz-I3R"/>
+                <outlet property="searchBar" destination="LpF-6F-X23" id="t9a-Z1-wFg"/>
+                <outlet property="tableView" destination="tV6-mI-D0w" id="H8v-re-tFY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-mI-D0w">
+                    <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <searchBar contentMode="redraw" placeholder="Search Food..." translatesAutoresizingMaskIntoConstraints="NO" id="LpF-6F-X23">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uT-bx-JFl">
+                    <rect key="frame" x="16" y="471" width="382" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2Px-q9-qlr">
+                    <rect key="frame" x="188.5" y="462.5" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LpF-6F-X23" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ee6-yp-3hV"/>
+                <constraint firstItem="7uT-bx-JFl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="FrP-jT-CKP"/>
+                <constraint firstItem="2Px-q9-qlr" firstAttribute="centerY" secondItem="tV6-mI-D0w" secondAttribute="centerY" id="G2w-Ti-6lr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tV6-mI-D0w" secondAttribute="bottom" id="Kun-5t-uhy"/>
+                <constraint firstItem="tV6-mI-D0w" firstAttribute="top" secondItem="LpF-6F-X23" secondAttribute="bottom" id="PuC-Sh-13C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7uT-bx-JFl" secondAttribute="trailing" constant="16" id="VZ4-qd-kbg"/>
+                <constraint firstItem="tV6-mI-D0w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="c6P-Iw-C8Y"/>
+                <constraint firstItem="LpF-6F-X23" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iHN-C2-gdk"/>
+                <constraint firstItem="LpF-6F-X23" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="if9-aE-7O4"/>
+                <constraint firstItem="2Px-q9-qlr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mSS-PX-1lS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tV6-mI-D0w" secondAttribute="trailing" id="q6W-dd-hvE"/>
+                <constraint firstItem="7uT-bx-JFl" firstAttribute="centerY" secondItem="tV6-mI-D0w" secondAttribute="centerY" id="zh4-G2-4aE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="129"/>
+        </view>
+    </objects>
+</document>
