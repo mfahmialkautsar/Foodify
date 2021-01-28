@@ -10,11 +10,18 @@ import Combine
 import Foundation
 import RealmSwift
 
-protocol LocaleDataSourceProtocol: class {
+protocol DetailLocaleDataSourceProtocol {
   func getDetail(id: String) -> AnyPublisher<DetailEntity?, Error>
-  func favorite(favorited: Bool, meal details: DetailEntity) -> AnyPublisher<Bool, Error>
-  func getFavDetail() -> AnyPublisher<[DetailEntity], Error>
+  func getFavDetails() -> AnyPublisher<[DetailEntity], Error>
 }
+
+protocol FavoriteLocaleDataSourceProtocol {
+  func favorite(favorited: Bool, meal details: DetailEntity) -> AnyPublisher<Bool, Error>
+}
+
+protocol LocaleDataSourceProtocol: class,
+  DetailLocaleDataSourceProtocol,
+  FavoriteLocaleDataSourceProtocol {}
 
 final class LocaleDataSource: NSObject {
   private let realm: Realm?
@@ -85,7 +92,7 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     }.eraseToAnyPublisher()
   }
 
-  func getFavDetail() -> AnyPublisher<[DetailEntity], Error> {
+  func getFavDetails() -> AnyPublisher<[DetailEntity], Error> {
     var token: NotificationToken?
     let passThroughSubject = PassthroughSubject<[DetailEntity], Error>()
     if let realm = self.realm {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CategoryModel: Equatable, Identifiable {
+struct CategoryModel {
   let id: String?
   let name: String?
   let image: String?

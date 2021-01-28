@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 protocol SearchUseCase {
-  func getSearch(name: String) -> AnyPublisher<[DetailModel]?, Error>
+  func getSearch(name: String) -> AnyPublisher<[Meal]?, Error>
 }
 
 class SearchInteractor: SearchUseCase {
@@ -20,7 +20,10 @@ class SearchInteractor: SearchUseCase {
     self.repository = repository
   }
 
-  func getSearch(name: String) -> AnyPublisher<[DetailModel]?, Error> {
+  func getSearch(name: String) -> AnyPublisher<[Meal]?, Error> {
     repository.getMealsByName(name: name)
+      .map { DomainMapper.mapDetailsDomainToPresenter(input: $0) }
+      .map { PresentationMapper.mapDetailsPresentationToMealPresentation(input: $0) }
+      .eraseToAnyPublisher()
   }
 }

@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 protocol HomeUseCase {
-  func getCategories() -> AnyPublisher<[CategoryModel], Error>
+  func getCategories() -> AnyPublisher<[Category], Error>
 }
 
 class HomeInteractor: HomeUseCase {
@@ -20,7 +20,9 @@ class HomeInteractor: HomeUseCase {
     self.repository = repository
   }
 
-  func getCategories() -> AnyPublisher<[CategoryModel], Error> {
+  func getCategories() -> AnyPublisher<[Category], Error> {
     repository.getCategories()
+      .map { DomainMapper.mapCategoriesDomainToPresentation(input: $0) }
+      .eraseToAnyPublisher()
   }
 }

@@ -10,12 +10,23 @@ import Alamofire
 import Combine
 import Foundation
 
-protocol RemoteDataSourceProtocol: class {
+protocol CategoryRemoteDataSourceProtocol {
   func getCategories() -> AnyPublisher<[CategoryResponse], Error>
+}
+
+protocol MealRemoteDataSourceProtocol {
   func getMealsByCategory(category: String) -> AnyPublisher<[MealResponse], Error>
-  func getDetail(id: String) -> AnyPublisher<[DetailResponse], Error>
   func getMealsByName(name: String) -> AnyPublisher<[DetailResponse]?, Error>
 }
+
+protocol DetailRemoteDataSourceprotocol {
+  func getDetail(id: String) -> AnyPublisher<[DetailResponse], Error>
+}
+
+protocol RemoteDataSourceProtocol: class,
+  CategoryRemoteDataSourceProtocol,
+  MealRemoteDataSourceProtocol,
+  DetailRemoteDataSourceprotocol {}
 
 final class RemoteDataSource: NSObject {
   override private init() {}
