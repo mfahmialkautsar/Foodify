@@ -9,14 +9,28 @@
 import Combine
 import Foundation
 
-protocol DataRepositoryProtocol {
-  func getCategories() -> AnyPublisher<[CategoryModel], Error>
+protocol MealDataRepositoryProtocol {
   func getMealsByCategory(category: String) -> AnyPublisher<[MealModel], Error>
-  func getDetail(id: String) -> AnyPublisher<DetailModel, Error>
-  func getFavorteMeals() -> AnyPublisher<[MealModel], Error>
-  func favorite(details: DetailModel) -> AnyPublisher<Bool, Error>
   func getMealsByName(name: String) -> AnyPublisher<[DetailModel]?, Error>
+  func getFavorteMeals() -> AnyPublisher<[MealModel], Error>
 }
+
+protocol CategoryDataRepositoryProtocol {
+  func getCategories() -> AnyPublisher<[CategoryModel], Error>
+}
+
+protocol DetailDataRepositoryProtocol {
+  func getDetail(id: String) -> AnyPublisher<DetailModel, Error>
+}
+
+protocol FavoriteDataRepositoryProtocol {
+  func favorite(detail: DetailModel) -> AnyPublisher<Bool, Error>
+}
+
+protocol DataRepositoryProtocol: CategoryDataRepositoryProtocol,
+  MealDataRepositoryProtocol,
+  DetailDataRepositoryProtocol,
+  FavoriteDataRepositoryProtocol {}
 
 final class DataRepository: NSObject {
   typealias DataInstance = (LocaleDataSource, RemoteDataSource) -> DataRepository
@@ -37,13 +51,13 @@ final class DataRepository: NSObject {
 extension DataRepository: DataRepositoryProtocol {
   func getCategories() -> AnyPublisher<[CategoryModel], Error> {
     remote.getCategories()
-      .map { ModelMapper.mapCategoryResponseToDomain(input: $0) }
+      .map { DataMapper.mapCategoriesResponseToDomain(input: $0) }
       .eraseToAnyPublisher()
   }
 
   func getMealsByCategory(category: String) -> AnyPublisher<[MealModel], Error> {
     remote.getMealsByCategory(category: category)
-      .map { ModelMapper.mapMealResponseToDomain(input: $0) }
+      .map { DataMapper.mapMealsResponseToDomain(input: $0) }
       .eraseToAnyPublisher()
   }
 
@@ -52,29 +66,29 @@ extension DataRepository: DataRepositoryProtocol {
       .flatMap { result -> AnyPublisher<DetailModel, Error> in
         if let result = result {
           return self.locale.getDetail(id: id)
-            .map { ModelMapper.mapDetailsEntityToDomain(input: $0 ?? result) }
+            .map { DataMapper.mapDetailEntityToDomain(input: $0 ?? result) }
             .eraseToAnyPublisher()
         } else {
           return self.remote.getDetail(id: id)
-            .map { ModelMapper.mapDetailsResponseToDomain(input: $0)[0] }
+            .map { DataMapper.mapDetailsResponseToDomain(input: $0)[0] }
             .eraseToAnyPublisher()
         }
       }.eraseToAnyPublisher()
   }
 
   func getFavorteMeals() -> AnyPublisher<[MealModel], Error> {
-    locale.getFavDetail()
-      .map { ModelMapper.mapDetailsEntityToMealDomain(input: $0) }
+    locale.getFavDetails()
+      .map { DataMapper.mapDetailsEntityToMealDomain(input: $0) }
       .eraseToAnyPublisher()
   }
 
-  func favorite(details: DetailModel) -> AnyPublisher<Bool, Error> {
-    locale.favorite(favorited: details.favorited, meal: ModelMapper.mapDetailsDomainToEntity(input: details))
+  func favorite(detail: DetailModel) -> AnyPublisher<Bool, Error> {
+    locale.favorite(favorited: detail.favorited, meal: DomainMapper.mapDetailDomainToEntity(input: detail))
   }
 
   func getMealsByName(name: String) -> AnyPublisher<[DetailModel]?, Error> {
     remote.getMealsByName(name: name)
-      .map { ModelMapper.mapDetailsResponseToDomain(input: $0) }
+      .map { DataMapper.mapDetailsResponseToDomain(input: $0) }
       .eraseToAnyPublisher()
   }
 }

@@ -10,24 +10,26 @@ import Combine
 import Foundation
 
 protocol DetailUseCase {
-  func getDetail() -> AnyPublisher<DetailModel, Error>
-  func favorite(_ details: DetailModel) -> AnyPublisher<Bool, Error>
+  func getDetail() -> AnyPublisher<Detail, Error>
+  func favorite(_ details: Detail) -> AnyPublisher<Bool, Error>
 }
 
 class DetailInteractor: DetailUseCase {
   private let repository: DataRepositoryProtocol
-  private let meal: MealModel
+  private let meal: Meal
 
-  required init(repository: DataRepositoryProtocol, meal: MealModel) {
+  required init(repository: DataRepositoryProtocol, meal: Meal) {
     self.repository = repository
     self.meal = meal
   }
 
-  func getDetail() -> AnyPublisher<DetailModel, Error> {
-    return repository.getDetail(id: meal.id ?? "")
+  func getDetail() -> AnyPublisher<Detail, Error> {
+    repository.getDetail(id: meal.id ?? "")
+      .map { DomainMapper.mapDetailDomainToPresentation(input: $0) }
+      .eraseToAnyPublisher()
   }
 
-  func favorite(_ details: DetailModel) -> AnyPublisher<Bool, Error> {
-    return repository.favorite(details: details)
+  func favorite(_ detail: Detail) -> AnyPublisher<Bool, Error> {
+    repository.favorite(detail: PresentationMapper.mapDetailPresentationToDomain(input: detail))
   }
 }

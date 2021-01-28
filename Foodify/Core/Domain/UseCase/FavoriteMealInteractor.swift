@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 protocol FavoriteMealUseCase {
-  func getFavoriteMeals() -> AnyPublisher<[MealModel], Error>
+  func getFavoriteMeals() -> AnyPublisher<[Meal], Error>
 }
 
 class FavoriteMealInteractor: FavoriteMealUseCase {
@@ -20,7 +20,9 @@ class FavoriteMealInteractor: FavoriteMealUseCase {
     self.repository = repository
   }
 
-  func getFavoriteMeals() -> AnyPublisher<[MealModel], Error> {
+  func getFavoriteMeals() -> AnyPublisher<[Meal], Error> {
     repository.getFavorteMeals()
+      .map { DomainMapper.mapMealsDomainToPresentation(input: $0) }
+      .eraseToAnyPublisher()
   }
 }

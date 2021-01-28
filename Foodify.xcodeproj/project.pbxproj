@@ -31,7 +31,7 @@
 		890EDF27259DF6DB00BDEBEF /* ResultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF26259DF6DB00BDEBEF /* ResultsExtension.swift */; };
 		890EDF29259DFBB700BDEBEF /* ErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF28259DFBB700BDEBEF /* ErrorExtension.swift */; };
 		890EDF2C259DFE8C00BDEBEF /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF2B259DFE8C00BDEBEF /* APICall.swift */; };
-		890EDF2F259E0F2B00BDEBEF /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF2E259E0F2B00BDEBEF /* ModelMapper.swift */; };
+		890EDF2F259E0F2B00BDEBEF /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF2E259E0F2B00BDEBEF /* DataMapper.swift */; };
 		890EDF31259E10FE00BDEBEF /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF30259E10FE00BDEBEF /* HomeInteractor.swift */; };
 		890EDF33259E11F700BDEBEF /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF32259E11F700BDEBEF /* HomePresenter.swift */; };
 		890EDF35259E168500BDEBEF /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890EDF34259E168500BDEBEF /* Injection.swift */; };
@@ -39,9 +39,9 @@
 		893996E425A05FF6007344DA /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 893996E325A05FF6007344DA /* .swiftlint.yml */; };
 		893996EA25A071B3007344DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893996E925A071B3007344DA /* HomeTableViewCell.xib */; };
 		893996ED25A088E9007344DA /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893996EC25A088E9007344DA /* CategoryTableViewCell.swift */; };
-		893996F125A08BEE007344DA /* MealsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893996F025A08BEE007344DA /* MealsPresenter.swift */; };
-		893996F325A08ED5007344DA /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893996F225A08ED5007344DA /* MealsView.swift */; };
-		893996F525A17767007344DA /* MealsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893996F425A17767007344DA /* MealsView.xib */; };
+		893996F125A08BEE007344DA /* MealPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893996F025A08BEE007344DA /* MealPresenter.swift */; };
+		893996F325A08ED5007344DA /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893996F225A08ED5007344DA /* MealView.swift */; };
+		893996F525A17767007344DA /* MealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893996F425A17767007344DA /* MealView.xib */; };
 		893996F725A18AC7007344DA /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893996F625A18AC7007344DA /* MealModel.swift */; };
 		893996FB25A1BC7B007344DA /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893996F925A1BC7B007344DA /* MealTableViewCell.swift */; };
 		893996FC25A1BC7B007344DA /* MealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893996FA25A1BC7B007344DA /* MealTableViewCell.xib */; };
@@ -58,8 +58,13 @@
 		897D7CAB259E4EA300A7BD86 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D7CAA259E4EA300A7BD86 /* DetailInteractor.swift */; };
 		897D7CAD259E4EB100A7BD86 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D7CAC259E4EB100A7BD86 /* HomeRouter.swift */; };
 		897D7CB3259E500300A7BD86 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D7CB2259E500300A7BD86 /* DetailPresenter.swift */; };
-		897D7CBD259E513100A7BD86 /* MealsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D7CBC259E513100A7BD86 /* MealsInteractor.swift */; };
-		89E3C99125A1EEF200EEECB2 /* MealsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3C99025A1EEF200EEECB2 /* MealsRouter.swift */; };
+		897D7CBD259E513100A7BD86 /* MealInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D7CBC259E513100A7BD86 /* MealInteractor.swift */; };
+		897F837D25BEE27400137BB2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F837C25BEE27400137BB2 /* Category.swift */; };
+		897F837F25BEE27900137BB2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F837E25BEE27900137BB2 /* Meal.swift */; };
+		897F838125BEE28000137BB2 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F838025BEE28000137BB2 /* Detail.swift */; };
+		897F838325BEE39B00137BB2 /* DomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F838225BEE39B00137BB2 /* DomainMapper.swift */; };
+		897F838525BEEC7700137BB2 /* PresentationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F838425BEEC7700137BB2 /* PresentationMapper.swift */; };
+		89E3C99125A1EEF200EEECB2 /* MealRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3C99025A1EEF200EEECB2 /* MealRouter.swift */; };
 		89E3C99425A1EF2C00EEECB2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3C99225A1EF2C00EEECB2 /* DetailView.swift */; };
 		89E3C99525A1EF2C00EEECB2 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E3C99325A1EF2C00EEECB2 /* DetailView.xib */; };
 		89E3C99D25A20CB000EEECB2 /* FavoriteMealPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3C99C25A20CB000EEECB2 /* FavoriteMealPresenter.swift */; };
@@ -92,7 +97,7 @@
 		890EDF26259DF6DB00BDEBEF /* ResultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsExtension.swift; sourceTree = "<group>"; };
 		890EDF28259DFBB700BDEBEF /* ErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtension.swift; sourceTree = "<group>"; };
 		890EDF2B259DFE8C00BDEBEF /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
-		890EDF2E259E0F2B00BDEBEF /* ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMapper.swift; sourceTree = "<group>"; };
+		890EDF2E259E0F2B00BDEBEF /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		890EDF30259E10FE00BDEBEF /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		890EDF32259E11F700BDEBEF /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		890EDF34259E168500BDEBEF /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
@@ -100,9 +105,9 @@
 		893996E325A05FF6007344DA /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		893996E925A071B3007344DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		893996EC25A088E9007344DA /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		893996F025A08BEE007344DA /* MealsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsPresenter.swift; sourceTree = "<group>"; };
-		893996F225A08ED5007344DA /* MealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
-		893996F425A17767007344DA /* MealsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealsView.xib; sourceTree = "<group>"; };
+		893996F025A08BEE007344DA /* MealPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPresenter.swift; sourceTree = "<group>"; };
+		893996F225A08ED5007344DA /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		893996F425A17767007344DA /* MealView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealView.xib; sourceTree = "<group>"; };
 		893996F625A18AC7007344DA /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 		893996F925A1BC7B007344DA /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		893996FA25A1BC7B007344DA /* MealTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealTableViewCell.xib; sourceTree = "<group>"; };
@@ -119,8 +124,13 @@
 		897D7CAA259E4EA300A7BD86 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		897D7CAC259E4EB100A7BD86 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		897D7CB2259E500300A7BD86 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
-		897D7CBC259E513100A7BD86 /* MealsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsInteractor.swift; sourceTree = "<group>"; };
-		89E3C99025A1EEF200EEECB2 /* MealsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRouter.swift; sourceTree = "<group>"; };
+		897D7CBC259E513100A7BD86 /* MealInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInteractor.swift; sourceTree = "<group>"; };
+		897F837C25BEE27400137BB2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		897F837E25BEE27900137BB2 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		897F838025BEE28000137BB2 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		897F838225BEE39B00137BB2 /* DomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainMapper.swift; sourceTree = "<group>"; };
+		897F838425BEEC7700137BB2 /* PresentationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationMapper.swift; sourceTree = "<group>"; };
+		89E3C99025A1EEF200EEECB2 /* MealRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRouter.swift; sourceTree = "<group>"; };
 		89E3C99225A1EF2C00EEECB2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		89E3C99325A1EF2C00EEECB2 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		89E3C99C25A20CB000EEECB2 /* FavoriteMealPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMealPresenter.swift; sourceTree = "<group>"; };
@@ -185,7 +195,7 @@
 			children = (
 				890EDEEF259DC20A00BDEBEF /* App */,
 				890EDEF1259DC29B00BDEBEF /* Core */,
-				890EDEFC259DC34C00BDEBEF /* Module */,
+				890EDEFC259DC34C00BDEBEF /* Presentation */,
 				890EDEF0259DC23C00BDEBEF /* Supporting Files */,
 			);
 			path = Foodify;
@@ -309,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				890EDF30259E10FE00BDEBEF /* HomeInteractor.swift */,
-				897D7CBC259E513100A7BD86 /* MealsInteractor.swift */,
+				897D7CBC259E513100A7BD86 /* MealInteractor.swift */,
 				897D7CAA259E4EA300A7BD86 /* DetailInteractor.swift */,
 				89F8F2B825A371F6000E448A /* FavoriteMealInteractor.swift */,
 				893F7D3525BC1E99005892F3 /* SearchInteractor.swift */,
@@ -317,18 +327,14 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		890EDEFC259DC34C00BDEBEF /* Module */ = {
+		890EDEFC259DC34C00BDEBEF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				890EDEFD259DC36000BDEBEF /* Home */,
-				897D7CB4259E501800A7BD86 /* Meals */,
-				897D7CAE259E4FE700A7BD86 /* Details */,
-				89E3C99725A1EFAA00EEECB2 /* Favorite */,
-				89E3C99625A1EFA400EEECB2 /* Profile */,
-				8975442325BBF2DE00A3CCF3 /* Search */,
+				897F837B25BEE25E00137BB2 /* Model */,
+				897F837A25BEE25800137BB2 /* Module */,
 				890EDEE1259DBBEE00BDEBEF /* Main.storyboard */,
 			);
-			path = Module;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		890EDEFD259DC36000BDEBEF /* Home */ = {
@@ -390,7 +396,9 @@
 		890EDF2D259E0E5D00BDEBEF /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				890EDF2E259E0F2B00BDEBEF /* ModelMapper.swift */,
+				890EDF2E259E0F2B00BDEBEF /* DataMapper.swift */,
+				897F838225BEE39B00137BB2 /* DomainMapper.swift */,
+				897F838425BEEC7700137BB2 /* PresentationMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -487,8 +495,8 @@
 		897D7CB5259E502000A7BD86 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				893996F225A08ED5007344DA /* MealsView.swift */,
-				893996F425A17767007344DA /* MealsView.xib */,
+				893996F225A08ED5007344DA /* MealView.swift */,
+				893996F425A17767007344DA /* MealView.xib */,
 				893996F825A1BC4E007344DA /* Table Cell */,
 			);
 			path = View;
@@ -497,7 +505,7 @@
 		897D7CB6259E502900A7BD86 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				89E3C99025A1EEF200EEECB2 /* MealsRouter.swift */,
+				89E3C99025A1EEF200EEECB2 /* MealRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -505,9 +513,32 @@
 		897D7CB7259E502D00A7BD86 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				893996F025A08BEE007344DA /* MealsPresenter.swift */,
+				893996F025A08BEE007344DA /* MealPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		897F837A25BEE25800137BB2 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				890EDEFD259DC36000BDEBEF /* Home */,
+				897D7CB4259E501800A7BD86 /* Meals */,
+				897D7CAE259E4FE700A7BD86 /* Details */,
+				89E3C99725A1EFAA00EEECB2 /* Favorite */,
+				89E3C99625A1EFA400EEECB2 /* Profile */,
+				8975442325BBF2DE00A3CCF3 /* Search */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		897F837B25BEE25E00137BB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				897F837C25BEE27400137BB2 /* Category.swift */,
+				897F837E25BEE27900137BB2 /* Meal.swift */,
+				897F838025BEE28000137BB2 /* Detail.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		89E3C99625A1EFA400EEECB2 /* Profile */ = {
@@ -636,7 +667,7 @@
 			files = (
 				893996E425A05FF6007344DA /* .swiftlint.yml in Resources */,
 				89E3C99525A1EF2C00EEECB2 /* DetailView.xib in Resources */,
-				893996F525A17767007344DA /* MealsView.xib in Resources */,
+				893996F525A17767007344DA /* MealView.xib in Resources */,
 				89F8F2BD25A372A1000E448A /* FavoriteMealView.xib in Resources */,
 				890EDEE8259DBBEE00BDEBEF /* LaunchScreen.storyboard in Resources */,
 				890EDEE5259DBBEE00BDEBEF /* Assets.xcassets in Resources */,
@@ -677,7 +708,8 @@
 				890EDF0B259DC6B700BDEBEF /* RemoteDataSource.swift in Sources */,
 				893996F725A18AC7007344DA /* MealModel.swift in Sources */,
 				890EDF27259DF6DB00BDEBEF /* ResultsExtension.swift in Sources */,
-				890EDF2F259E0F2B00BDEBEF /* ModelMapper.swift in Sources */,
+				890EDF2F259E0F2B00BDEBEF /* DataMapper.swift in Sources */,
+				897F837F25BEE27900137BB2 /* Meal.swift in Sources */,
 				89E3C99F25A20CBF00EEECB2 /* FavoriteMealRouter.swift in Sources */,
 				89F8F2BF25A372B5000E448A /* ProfileView.swift in Sources */,
 				897D7CA9259E4E0000A7BD86 /* DetailModel.swift in Sources */,
@@ -686,16 +718,20 @@
 				89424D4725B9CFAD00AE813C /* CGFloatExtension.swift in Sources */,
 				890EDF22259DDA4E00BDEBEF /* DetailResponse.swift in Sources */,
 				890EDF07259DC69E00BDEBEF /* LocaleDataSource.swift in Sources */,
-				893996F325A08ED5007344DA /* MealsView.swift in Sources */,
+				893996F325A08ED5007344DA /* MealView.swift in Sources */,
 				890EDEE0259DBBEE00BDEBEF /* HomeView.swift in Sources */,
 				897D7CAB259E4EA300A7BD86 /* DetailInteractor.swift in Sources */,
 				893F7D3225BC1E84005892F3 /* SearchRouter.swift in Sources */,
 				89F8F2B925A371F6000E448A /* FavoriteMealInteractor.swift in Sources */,
+				897F837D25BEE27400137BB2 /* Category.swift in Sources */,
+				897F838525BEEC7700137BB2 /* PresentationMapper.swift in Sources */,
 				890EDF09259DC6AC00BDEBEF /* CategoryResponse.swift in Sources */,
+				897F838325BEE39B00137BB2 /* DomainMapper.swift in Sources */,
 				89424D4925B9D05200AE813C /* UIColorExtension.swift in Sources */,
 				8953D0F625AB506A00F63EF2 /* StringExtension.swift in Sources */,
+				897F838125BEE28000137BB2 /* Detail.swift in Sources */,
 				89E3C99425A1EF2C00EEECB2 /* DetailView.swift in Sources */,
-				893996F125A08BEE007344DA /* MealsPresenter.swift in Sources */,
+				893996F125A08BEE007344DA /* MealPresenter.swift in Sources */,
 				893F7D3425BC1E8E005892F3 /* SearchPresenter.swift in Sources */,
 				893996FB25A1BC7B007344DA /* MealTableViewCell.swift in Sources */,
 				897D7CB3259E500300A7BD86 /* DetailPresenter.swift in Sources */,
@@ -707,12 +743,12 @@
 				890EDEDC259DBBEE00BDEBEF /* AppDelegate.swift in Sources */,
 				890EDF0D259DC6C800BDEBEF /* DataRepository.swift in Sources */,
 				890EDF24259DF26800BDEBEF /* DetailEntity.swift in Sources */,
-				89E3C99125A1EEF200EEECB2 /* MealsRouter.swift in Sources */,
+				89E3C99125A1EEF200EEECB2 /* MealRouter.swift in Sources */,
 				890EDEDE259DBBEE00BDEBEF /* SceneDelegate.swift in Sources */,
 				890EDF29259DFBB700BDEBEF /* ErrorExtension.swift in Sources */,
 				890EDF33259E11F700BDEBEF /* HomePresenter.swift in Sources */,
 				891DFF4925BC65ED00F14751 /* Debouncer.swift in Sources */,
-				897D7CBD259E513100A7BD86 /* MealsInteractor.swift in Sources */,
+				897D7CBD259E513100A7BD86 /* MealInteractor.swift in Sources */,
 				893F7D2F25BC1E62005892F3 /* SearchView.swift in Sources */,
 				893F7D3625BC1E99005892F3 /* SearchInteractor.swift in Sources */,
 				890EDF31259E10FE00BDEBEF /* HomeInteractor.swift in Sources */,

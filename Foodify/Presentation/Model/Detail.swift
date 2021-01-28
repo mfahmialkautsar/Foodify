@@ -1,18 +1,18 @@
 //
-//  DetailModel.swift
+//  Detail.swift
 //  Foodify
 //
-//  Created by Jamal on 01/01/21.
+//  Created by Jamal on 25/01/21.
 //  Copyright © 2021 Kementerian Agama RI. All rights reserved.
 //
 
 import Foundation
 
-struct DetailsModel {
+struct Details {
   let detail: [DetailModel]
 }
 
-struct DetailModel {
+struct Detail: Equatable, Identifiable {
   let id: String?
   let name: String?
   let category: String?

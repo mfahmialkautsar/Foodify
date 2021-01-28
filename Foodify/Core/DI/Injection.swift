@@ -22,12 +22,12 @@ final class Injection: NSObject {
     return HomeInteractor(repository: repository)
   }
 
-  func provideMeals() -> MealsUseCase {
+  func provideMeals() -> MealUseCase {
     let repository = provideRepository()
-    return MealsInteractor(repository: repository)
+    return MealInteractor(repository: repository)
   }
 
-  func provideDetail(meal: MealModel) -> DetailUseCase {
+  func provideDetail(meal: Meal) -> DetailUseCase {
     let repository = provideRepository()
     return DetailInteractor(repository: repository, meal: meal)
   }
