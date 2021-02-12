@@ -22,7 +22,7 @@ class MealsView: UIViewController {
         MealsRemoteDataSource,
         MealsTransformer>>,
     ToMealRouter>
-  var presenter: Presenter?
+  let presenter: Presenter
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mealTableView: UITableView!
@@ -49,10 +49,9 @@ class MealsView: UIViewController {
     scrollView.setContentOffset(CGPoint(x: 0, y: scrollView.contentOffset.y), animated: true)
     scrollView.isDirectionalLockEnabled = true
 
-    guard let presenter = presenter else { return }
-    setView(presenter: presenter)
+    setView()
     presenter.objectWillChange.receive(on: RunLoop.main).sink {
-      self.render(presenter: presenter)
+      self.render()
     }.store(in: &presenter.cancellables)
     presenter.getMeals()
   }
@@ -64,13 +63,12 @@ class MealsView: UIViewController {
 
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    guard let presenter = presenter else { return }
     navigationItem.title = presenter.category?.name
   }
 }
 
 fileprivate extension MealsView {
-  func setView(presenter: Presenter) {
+  func setView() {
     mealImage.sd_imageIndicator = SDWebImageActivityIndicator.medium
     mealImage.sd_setImage(
       with: URL(string: presenter.category?.image ?? ""),
@@ -83,7 +81,7 @@ fileprivate extension MealsView {
     mealCategoryDesc.text = presenter.category?.desc
   }
 
-  func render(presenter: Presenter) {
+  func render() {
     switch presenter.state {
     case .loading:
       loadIndicator.startAnimating()
@@ -128,28 +126,26 @@ fileprivate extension MealsView {
   }
 
   @objc func refreshData() {
-    presenter?.getMeals()
+    presenter.getMeals()
     refreshControl.endRefreshing()
   }
 }
 
 extension MealsView: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    presenter?.meals.count ?? 0
+    presenter.meals.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "MealByCategoryCell", for: indexPath)
       as? MealByCategoryTableViewCell
-    if let presenter = presenter {
       let meal = presenter.meals[indexPath.row]
       cell?.meal = meal
-    }
     return cell ?? UITableViewCell()
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    presenter?.toMeal(for: indexPath.row, view: self)
+    presenter.toMeal(for: indexPath.row, view: self)
   }
 }

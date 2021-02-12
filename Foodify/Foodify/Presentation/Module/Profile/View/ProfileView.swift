@@ -20,6 +20,7 @@ class ProfileView: UITableViewController {
     super.viewDidLoad()
     navigationItem.title = "profile".localized(nil)
     favoriteCellText.text = "favorite".localized(nil)
+    profileName.text = "my_name".localized(nil)
     profileImage.round()
   }
 
