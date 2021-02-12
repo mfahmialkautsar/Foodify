@@ -1,5 +1,8 @@
 #  Foodify
-An iOS foods recipe app from TheMealDB API with VIPER Clean Architecture.
+
+[![Build Status](https://travis-ci.com/mfahmialkautsar/Foodify.svg?branch=master)](https://travis-ci.com/mfahmialkautsar/Foodify)
+
+An iOS foods recipe app from TheMealDB API with **VIPER Clean Architecture**, **Dependency Injection**, **Reactive Programming**, and **Modularization**.
 
 This repository is my class assignment at Dicoding Academy online course platform at class: Become An iOS Developer Expert ([Menjadi iOS Developer Expert](https://www.dicoding.com/academies/209)). I've enrolled in this class as a part of IDCamp 2020 scholarship programme by Indosat Ooredoo and Dicoding Indonesia.
 
@@ -11,12 +14,13 @@ This repository is my class assignment at Dicoding Academy online course platfor
 <img src="./screenshots/favorite.png" width="256" title="Favorite Foods">
 
 ## Features
-* [x] Fetching food recipe information online from themealdb.com
-* [x] Save food as favorite to see it without internet connection
-* [x] Food detail
-* [x] Search food online
-* [x] Search favorited food
+* [x] Fetching foods recipe information online from TheMealDB.com
+* [x] Save foods as favorite to see them without internet connection
+* [x] Food details
+* [x] Search foods online
+* [x] Search favorited foods
 * [x] Profile
+* [x] Trilingual (not including the data from TheMealDB API): English, Indonesian, and Korean
 
 ## Technologies Used
 - [Swift](https://swift.org/documentation)

@@ -75,14 +75,14 @@ fileprivate extension HomeView {
   }
 
   func setupTableView() {
-    tableView.delegate = self
-    tableView.dataSource = self
-    tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
+    tableView?.delegate = self
+    tableView?.dataSource = self
+    tableView?.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
 
     if #available(iOS 10.0, *) {
-      tableView.refreshControl = refreshControl
+      tableView?.refreshControl = refreshControl
     } else {
-      tableView.addSubview(refreshControl)
+      tableView?.addSubview(refreshControl)
     }
 
     refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
