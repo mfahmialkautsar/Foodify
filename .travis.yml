@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode11.3
+xcode_project: Foodify/Foodify.xcodeproj
+xcode_scheme: Foodify
+xcode_destination: platform=iOS Simulator,OS=13.3,name=iPhone 11 Pro

@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Foodify
+
+  Created by Jamal on 12/02/21.
+  Copyright © 2021 Kementerian Agama RI. All rights reserved.
+*/
+"home" = "Home";
+"profile" = "Profile";
+"favorite" = "Favorite";
+"food_categories" = "Food Categories";
+"search_meals" = "Search Meals";
+"search_meals_placeholder" = "I want to cook...";
+"search_favorite_placeholder" = "My favorite foods...";
+"ingredients" = "Ingredients";
+"instructions" = "Instructions";
+"source" = "Source";
+"search_not_found" = "not found";
+"empty_favorite" = "You have not added any food to favorite";
+"not_in_favorite" = "not in Favorite";

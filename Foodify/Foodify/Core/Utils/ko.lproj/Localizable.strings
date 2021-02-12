@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Foodify
+
+  Created by Jamal on 12/02/21.
+  Copyright © 2021 Kementerian Agama RI. All rights reserved.
+*/
+"home" = "집";
+"profile" = "프로필";
+"favorite" = "특히 잘하는";
+"food_categories" = "식품 카테고리";
+"search_meals" = "식사 검색";
+"search_meals_placeholder" = "나는 요리하고 싶다 ...";
+"search_favorite_placeholder" = "내가 가장 좋아하는 음식 ...";
+"ingredients" = "성분";
+"instructions" = "명령";
+"source" = "출처";
+"search_not_found" = "찾을 수 없음";
+"empty_favorite" = "즐겨 찾기에 추가 한 음식이 없습니다.";
+"not_in_favorite" = "즐겨 찾기에 없음";
