@@ -1,0 +1,21 @@
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "FTi-TQ-9TJ"; */
+"FTi-TQ-9TJ.title" = "Home";
+
+/* Class = "UILabel"; text = "Favorite"; ObjectID = "VfG-1W-t0F"; */
+"VfG-1W-t0F.text" = "Favorite";
+
+/* Class = "UIBarButtonItem"; title = "Search"; ObjectID = "YJf-lq-EEd"; */
+"YJf-lq-EEd.title" = "Search";
+
+/* Class = "UILabel"; text = "Error Label"; ObjectID = "rzg-gY-W22"; */
+"rzg-gY-W22.text" = "Error Label";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "vKe-3q-emr"; */
+"vKe-3q-emr.title" = "Profile";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "xAk-4B-Y3r"; */
+"xAk-4B-Y3r.title" = "Profile";
+
+/* Class = "UILabel"; text = "Muhamad Fahmi Al Kautsar"; ObjectID = "yRw-v8-X5F"; */
+"yRw-v8-X5F.text" = "Muhamad Fahmi Al Kautsar";

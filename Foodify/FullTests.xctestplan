@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "77B6C725-7031-4795-81BF-1084C1AED4BB",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Foodify.xcodeproj",
+      "identifier" : "890EDED7259DBBEE00BDEBEF",
+      "name" : "Foodify"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Foodify.xcodeproj",
+        "identifier" : "89A58BCC25D6BCED00A26C1D",
+        "name" : "FoodifyTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Foodify.xcodeproj",
+        "identifier" : "89A58BBE25D6BCE500A26C1D",
+        "name" : "FoodifyUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
