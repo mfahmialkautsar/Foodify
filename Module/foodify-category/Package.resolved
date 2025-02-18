@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
+          "version": "5.4.4"
+        }
+      },
+      {
+        "package": "FoodifyCore",
+        "repositoryURL": "https://github.com/mfahmialkautsar/foodify-core.git",
+        "state": {
+          "branch": null,
+          "revision": "ce5e0f183a4bc67dfa1a947a0795f11a3f29edc1",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Realm",
+        "repositoryURL": "https://github.com/realm/realm-cocoa.git",
+        "state": {
+          "branch": null,
+          "revision": "a3abcdf95a3176f5ad990239920aad4ef86e00de",
+          "version": "10.54.2"
+        }
+      },
+      {
+        "package": "RealmDatabase",
+        "repositoryURL": "https://github.com/realm/realm-core.git",
+        "state": {
+          "branch": null,
+          "revision": "85eeca41654cc9070ad81a21a4b1d153ad467c33",
+          "version": "14.13.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
